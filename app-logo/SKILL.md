@@ -61,7 +61,7 @@ one evening. It combines two ideas:
    - **Browser favicon (16/32 px, `favicon.ico` + `favicon.svg`) from the FLAT icon.** At 16 px the 3D
      bevel and shadows eat the space and the contrast.
    - **From the 3D icon:** apple-touch-icon 180 (full bleed, no transparency, iOS rounds it), PWA icons
-     192/512 (transparent corners; drop `maskable`, or Android crops the rounded square), header logo.
+     192/512 `any` (transparent corners), header logo. Plus a separate `maskable` pair 192/512, full-bleed: flat mark on a solid background inside the safe zone (circle of 40% radius), no transparent corners, otherwise Android shows a white border. Declare both purposes in the manifest.
    - `scripts/site_icons.js` builds all sizes from the 3D render and the flat icon (needs `sharp`,
      installed outside the repo). Vitrum exports the gray scene background: the script removes it.
    - Update the site's icon tests, release, then check the live site: fetch the favicon and icons,
